@@ -1,0 +1,7 @@
+.env
+.sqlx/
+.ideas/
+**/*.bk
+
+debug/
+target/

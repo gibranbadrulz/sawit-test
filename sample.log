@@ -1,0 +1,71 @@
+2023-08-15 09:00:00 checkout 200 100ms user1001 tx1001 Purchased iPhone 13
+2023-08-15 09:02:00 checkout 200 110ms user1002 tx1002 Purchased MacBook Pro
+2023-08-15 09:05:00 checkout 500 500ms user1003 tx1003 Failed Purchase
+2023-08-15 09:10:00 checkout 200 90ms user1004 tx1004 Purchased AirPods Pro
+2023-08-15 09:15:00 checkout 400 150ms user1005 tx1005 Invalid Payment Method
+2023-08-15 09:20:00 checkout 500 510ms user1006 tx1006 Failed Purchase
+2023-08-15 09:25:00 checkout 200 80ms user1007 tx1007 Purchased Apple Watch
+2023-08-15 09:30:00 checkout 500 520ms user1008 tx1008 Failed Purchase
+2023-08-15 09:35:00 checkout 200 85ms user1009 tx1009 Purchased iPad Pro
+2023-08-15 09:40:00 checkout 500 530ms user1010 tx1010 Failed Purchase
+2023-08-15 09:45:00 checkout 200 95ms user1011 tx1011 Purchased iPhone SE
+2023-08-15 09:50:00 checkout 500 540ms user1012 tx1012 Failed Purchase
+2023-08-15 09:55:00 checkout 200 105ms user1013 tx1013 Purchased iMac
+2023-08-15 10:00:00 checkout 500 550ms user1014 tx1014 Failed Purchase
+2023-08-15 10:05:00 checkout 400 160ms user1015 tx1015 Invalid Coupon
+2023-08-15 10:10:00 checkout 500 560ms user1016 tx1016 Failed Purchase
+2023-08-15 10:15:00 checkout 200 115ms user1017 tx1017 Purchased Apple TV
+2023-08-15 10:20:00 checkout 500 570ms user1018 tx1018 Failed Purchase
+2023-08-15 10:25:00 checkout 200 125ms user1019 tx1019 Purchased HomePod
+2023-08-15 10:30:00 checkout 500 580ms user1020 tx1020 Failed Purchase
+2023-08-15 10:35:00 checkout 200 130ms user1021 tx1021 Purchased iPhone 13
+2023-08-15 10:40:00 checkout 500 590ms user1022 tx1022 Failed Purchase
+2023-08-15 10:45:00 checkout 200 140ms user1023 tx1023 Purchased MacBook Air
+2023-08-15 10:50:00 checkout 500 600ms user1024 tx1024 Failed Purchase
+2023-08-15 10:55:00 checkout 200 150ms user1025 tx1025 Purchased Magic Mouse
+2023-08-15 11:00:00 checkout 500 610ms user1026 tx1026 Failed Purchase
+2023-08-15 11:05:00 checkout 200 160ms user1027 tx1027 Purchased iPad Mini
+2023-08-15 11:10:00 checkout 500 620ms user1028 tx1028 Failed Purchase
+2023-08-15 11:15:00 checkout 200 170ms user1029 tx1029 Purchased AirTag
+2023-08-15 11:20:00 checkout 500 630ms user1030 tx1030 Failed Purchase
+2023-08-15 11:25:00 checkout 200 180ms user1031 tx1031 Purchased iPhone 13 Pro
+2023-08-15 11:30:00 checkout 500 640ms user1032 tx1032 Failed Purchase
+2023-08-15 11:35:00 checkout 200 190ms user1033 tx1033 Purchased Mac Mini
+2023-08-15 11:40:00 checkout 500 650ms user1034 tx1034 Failed Purchase
+2023-08-15 11:45:00 checkout 200 200ms user1035 tx1035 Purchased Mac Studio
+2023-08-15 11:50:00 checkout 500 660ms user1036 tx1036 Failed Purchase
+2023-08-15 11:55:00 checkout 200 210ms user1037 tx1037 Purchased Studio Display
+2023-08-15 12:00:00 checkout 500 670ms user1038 tx1038 Failed Purchase
+2023-08-15 12:05:00 checkout 200 220ms user1039 tx1039 Purchased Mac Pro
+2023-08-15 12:10:00 checkout 500 680ms user1040 tx1040 Failed Purchase
+2023-08-15 12:15:00 checkout 200 230ms user1041 tx1041 Purchased iPhone 12
+2023-08-15 12:20:00 checkout 500 690ms user1042 tx1042 Failed Purchase
+2023-08-15 12:25:00 checkout 200 240ms user1043 tx1043 Purchased iPhone 13
+2023-08-15 12:30:00 checkout 500 700ms user1044 tx1044 Failed Purchase
+2023-08-15 12:35:00 checkout 200 250ms user1045 tx1045 Purchased MacBook Pro
+2023-08-15 12:40:00 checkout 500 710ms user1046 tx1046 Failed Purchase
+2023-08-15 12:45:00 checkout 200 260ms user1047 tx1047 Purchased AirPods Pro
+2023-08-15 12:50:00 checkout 500 720ms user1048 tx1048 Failed Purchase
+2023-08-15 12:55:00 checkout 200 270ms user1049 tx1049 Purchased Apple Watch
+2023-08-15 13:00:00 checkout 500 730ms user1050 tx1050 Failed Purchase
+2023-08-15 13:05:00 checkout 200 280ms user1051 tx1051 Purchased iPad Pro
+2023-08-15 13:10:00 checkout 500 740ms user1052 tx1052 Failed Purchase
+2023-08-15 13:15:00 checkout 200 290ms user1053 tx1053 Purchased iPhone SE
+2023-08-15 13:20:00 checkout 500 750ms user1054 tx1054 Failed Purchase
+2023-08-15 13:25:00 checkout 200 300ms user1055 tx1055 Purchased iMac
+2023-08-15 13:30:00 checkout 500 760ms user1056 tx1056 Failed Purchase
+2023-08-15 13:35:00 checkout 200 310ms user1057 tx1057 Purchased Apple TV
+2023-08-15 13:40:00 checkout 500 770ms user1058 tx1058 Failed Purchase
+2023-08-15 13:45:00 checkout 200 320ms user1059 tx1059 Purchased HomePod
+2023-08-15 13:50:00 checkout 500 780ms user1060 tx1060 Failed Purchase
+2023-08-15 13:55:00 checkout 200 330ms user1061 tx1061 Purchased iPhone 13
+2023-08-15 14:00:00 checkout 500 790ms user1062 tx1062 Failed Purchase
+2023-08-15 14:05:00 checkout 200 340ms user1063 tx1063 Purchased MacBook Air
+2023-08-15 14:10:00 checkout 500 800ms user1064 tx1064 Failed Purchase
+2023-08-15 14:15:00 checkout 200 350ms user1065 tx1065 Purchased Magic Mouse
+2023-08-15 14:20:00 checkout 500 810ms user1066 tx1066 Failed Purchase
+2023-08-15 14:25:00 checkout 200 360ms user1067 tx1067 Purchased iPad Mini
+2023-08-15 14:30:00 checkout 500 820ms user1068 tx1068 Failed Purchase
+2023-08-15 14:35:00 checkout 200 370ms user1069 tx1069 Purchased AirTag
+2023-08-15 14:40:00 checkout 500 830ms user1070 tx1070 Failed Purchase
+2023-08-15 14:45:00 checkout 200 380ms user1071 tx1071 Purchased iPhone 13 Pro
