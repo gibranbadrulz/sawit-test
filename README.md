@@ -14,3 +14,109 @@ cargo build --release
 Here's a simple diagram about the architecture of the tool which describes what are the main components and how they interact together.
 
 ![components](./assets/images/diagram.png)
+
+## Elastic Stack
+
+The `docker-compose.yml` file sets up Docker containers for Elasticsearch and Kibana, which are essential components of the Elastic Stack used for centralized logging and data visualization.
+
+```yaml
+version: "3.9"
+
+services:
+  elasticsearch:
+    image: elasticsearch:7.17.12
+    container_name: elasticsearch
+    environment:
+      - "node.name=elasticsearch"
+      - "cluster.name=docker-cluster"
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - "xpack.security.enabled=true"
+      - "discovery.type=single-node"
+      - "ELASTIC_PASSWORD=homestead"
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    networks:
+      - es-net
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+
+      ##
+      ## kibana configurations here...
+      ##
+
+volumes:
+  esdata:
+    driver: local
+
+networks:
+  es-net:
+    driver: bridge
+```
+**Elasticsearch Service:**
+- **image:** Specifies the Elasticsearch Docker image and version (elasticsearch:7.17.12 in this case).
+- **container_name:** Sets the name of the Docker container to elasticsearch.
+- **environment:**
+  - **node.name:** Specifies the name of the Elasticsearch node.
+  - **cluster.name:** Sets the name of the Docker cluster.
+  - **ES_JAVA_OPTS:** Sets JVM options for Elasticsearch heap size (-Xms512m -Xmx512m sets minimum and maximum heap size to 512MB).
+  - **xpack.security.enabled:** Enables X-Pack security features.
+  - **discovery.type:** Specifies the discovery type for Elasticsearch (single-node for standalone mode).
+  - **ELASTIC_PASSWORD:** Sets the password for the elastic superuser.
+- **ports:** Maps Elasticsearch ports:
+  - **9200:9200:** Exposes Elasticsearch HTTP REST API.
+  - **9300:9300:** Exposes Elasticsearch transport protocol.
+- **networks:** Attaches the service to a custom Docker network named es-net.
+- **volumes:** Mounts a Docker volume named esdata to persist Elasticsearch data.
+
+```yaml
+  kibana:
+    image: kibana:7.17.12
+    container_name: kibana
+    environment:
+      - "ELASTICSEARCH_URL=http://elasticsearch:9200"
+      - "ELASTICSEARCH_HOSTS=http://elasticsearch:9200"
+      - "ELASTICSEARCH_USERNAME=elastic"
+      - "ELASTICSEARCH_PASSWORD=homestead"
+    ports:
+      - "5601:5601"
+    networks:
+      - es-net
+    depends_on:
+      - elasticsearch
+```
+**Kibana Service:**
+- **image:** Specifies the Kibana Docker image and version (kibana:7.17.12 in this case).
+- **container_name:** Sets the name of the Docker container to kibana.
+- **environment:**
+  - **ELASTICSEARCH_URL:** Specifies the URL of Elasticsearch.
+  - **ELASTICSEARCH_HOSTS:** Specifies the hosts of Elasticsearch.
+  - **ELASTICSEARCH_USERNAME:** Sets the username for Elasticsearch (elastic by default).
+  - **ELASTICSEARCH_PASSWORD:** Sets the password for the elastic user.
+- **ports:** Maps Kibana port 5601 to host port 5601.
+- **networks:** Attaches the service to the same custom Docker network es-net as Elasticsearch.
+- **depends_on:** Specifies that Kibana depends on Elasticsearch, ensuring Elasticsearch starts first.
+
+### Deploy ELK Stack
+
+To use this configuration:
+
+```
+docker compose up -d
+```
+
+Access Elasticsearch at http://localhost:9200 and Kibana at http://localhost:5601 in web browser.
+
+### Deploy Kibana Dashboard
+
+To deploy Kibana dashboards using saved objects stored in a [assets/dashboard.ndjson](./assets/dashboard.json).
+
+**Using Kibana Saved Objects API:**
+
+Use `curl` or any HTTP client to send a POST request to import the saved objects:
+
+```
+curl -X POST "http://elastic:homestead@localhost:5601/api/saved_objects/_import" \
+  -H "kbn-xsrf: true" \
+  --form file=@assets/dashboard.ndjson
+```
