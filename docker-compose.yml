@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  elasticsearch:
+    image: elasticsearch:7.17.12
+    container_name: elasticsearch
+    environment:
+      - "node.name=elasticsearch"
+      - "cluster.name=docker-cluster"
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - "xpack.security.enabled=true"
+      - "discovery.type=single-node"
+      - "ELASTIC_PASSWORD=homestead"
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    networks:
+      - es-net
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+
+volumes:
+  esdata:
+    driver: local
+
+networks:
+  es-net:
+    driver: bridge
