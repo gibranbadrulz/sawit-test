@@ -1,6 +1,6 @@
 # This stage is only used for building the Rust binary. Afterwards the binary is copied
 # into the actual image below
-FROM clux/muslrust:1.81.0-nightly-2024-07-16 as builder
+FROM clux/muslrust:1.81.0-nightly-2024-07-16 AS builder
 WORKDIR /volume
 
 COPY Cargo.toml Cargo.lock ./
