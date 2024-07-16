@@ -9,7 +9,7 @@ CARGO := cargo
 CARGO_FLAGS :=
 
 ifeq ($(DEBUG),true)
-    CARGO_FLAGS += --verbose
+    CARGO_FLAGS +=
 else
     CARGO_FLAGS += --quiet
 endif
