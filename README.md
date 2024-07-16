@@ -39,7 +39,7 @@ $ docker run --rm \
   -e "ELASTIC_URL=http://127.0.0.1:9200" \
   -e "ELASTIC_USER=elastic" \
   -e "ELASTIC_PASSWORD=homestead" \
-  -v  ./sample.log:/tmp/sample.log \
+  -v ./sample.log:/tmp/sample.log \
   gibranbadrul/sawit-log --log-file /tmp/sample.log
 ```
 
@@ -171,9 +171,7 @@ Access Elasticsearch at http://localhost:9200 and Kibana at http://localhost:560
 
 ### Deploy Kibana Dashboard
 
-To deploy Kibana dashboards using saved objects stored in a [assets/dashboard.ndjson](./assets/dashboard.ndjson).
-
-Use `curl` or any HTTP client to send a POST request to import objects via Kibana Saved Objects API:
+To deploy Kibana dashboards using saved objects stored in a [assets/dashboard.ndjson](./assets/dashboard.ndjson). Use `curl` or any HTTP client to send a POST request to import objects via Kibana Saved Objects API:
 
 ```
 curl -X POST "http://elastic:homestead@localhost:5601/api/saved_objects/_import" \
