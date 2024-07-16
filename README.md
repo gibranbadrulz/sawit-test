@@ -7,7 +7,7 @@ SRE Technical Test from Sawit Pro, built with Rust as CLI tool. This tool is use
   - [TOC](#toc)
   - [Architecture](#architecture)
   - [Usage](#usage)
-  - [Rationale for Choosing This Infrastructure](#rationale-for-choosing-this-infrastructure)
+  - [Rationale for Choosing this Infrastructure](#rationale-for-choosing-this-infrastructure)
   - [Elastic Stack](#elastic-stack)
     - [Elasticsearch Service](#elasticsearch-service)
     - [Kibana Service](#kibana-service)
@@ -27,13 +27,13 @@ cargo build --release
 ./target/release/sawit-log --log-file <filename>
 ```
 
-## Rationale for Choosing This Infrastructure
+## Rationale for Choosing this Infrastructure
 
 The chosen logging infrastructure is designed to be efficient, scalable, flexible, and reliable.
 
-By leveraging asynchronous processing with tokio and reqwest, the system ensures non-blocking operations and can handle large volumes of log data efficiently. The use of buffered reading helps manage large log files without excessive memory usage.
+By leveraging asynchronous processing with `tokio` and `reqwest`, the system ensures non-blocking operations and can handle large volumes of log data efficiently. The use of buffered reading helps manage large log files without excessive memory usage.
 
-Elasticsearch is a proven solution for log management, offering robust search capabilities and scalability, making it suitable for growing log data volumes.
+`Elasticsearch` is a proven solution for log management, offering robust search capabilities and scalability, making it suitable for growing log data volumes.
 
 Overall, this infrastructure balances performance, reliability, and flexibility, making it a robust choice for managing and analyzing log data.
 
