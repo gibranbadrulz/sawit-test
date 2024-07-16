@@ -2,6 +2,22 @@
 
 SRE Technical Test from Sawit Pro, built with Rust as CLI tool. This tool is used to collect log data from source and ship into Elasticsearch Data Lake.
 
+- [Sawit Test](#sawit-test)
+  - [Architecture](#architecture)
+  - [Usage](#usage)
+  - [Rationale for Choosing This Infrastructure](#rationale-for-choosing-this-infrastructure)
+  - [Elastic Stack](#elastic-stack)
+    - [Elasticsearch Service](#elasticsearch-service)
+    - [Kibana Service](#kibana-service)
+    - [Deploy ELK Stack](#deploy-elk-stack)
+    - [Deploy Kibana Dashboard](#deploy-kibana-dashboard)
+
+## Architecture
+
+Here's a simple diagram about the architecture of the tool which describes what are the main components and how they interact together.
+
+![components](./assets/images/diagram.png)
+
 ## Usage
 
 ```
@@ -9,11 +25,15 @@ cargo build --release
 ./target/release/sawit-log --log-file <filename>
 ```
 
-## Architecture
+## Rationale for Choosing This Infrastructure
 
-Here's a simple diagram about the architecture of the tool which describes what are the main components and how they interact together.
+The chosen logging infrastructure is designed to be efficient, scalable, flexible, and reliable.
 
-![components](./assets/images/diagram.png)
+By leveraging asynchronous processing with tokio and reqwest, the system ensures non-blocking operations and can handle large volumes of log data efficiently. The use of buffered reading helps manage large log files without excessive memory usage.
+
+Elasticsearch is a proven solution for log management, offering robust search capabilities and scalability, making it suitable for growing log data volumes.
+
+Overall, this infrastructure balances performance, reliability, and flexibility, making it a robust choice for managing and analyzing log data.
 
 ## Elastic Stack
 
