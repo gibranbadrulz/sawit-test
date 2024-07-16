@@ -28,9 +28,33 @@ Here's a simple diagram about the architecture of the tool which describes what 
 
 ## Usage
 
+### Docker
+
 ```
-cargo build --release
-./target/release/sawit-log --log-file <filename>
+$ docker run --rm \
+  -e "ELASTIC_URL=http://127.0.0.1:9200" \
+  -e "ELASTIC_USER=elastic" \
+  -e "ELASTIC_PASSWORD=homestead" \
+  -v  ./sample.log:/tmp/sample.log \
+  gibranbadrul/sawit-log --log-file /tmp/sample.log
+```
+
+### — or
+
+Manual building executable from source code:
+
+```
+$ git clone https://github.com/gibranbadrulz/sawit-test.git
+$ cd sawit-test
+$ make release DEBUG=true
+$ cp .env_example .env
+$ ./target/release/sawit-log --log-file sample.log
+```
+
+Cleaning the project:
+
+```
+$ make clean
 ```
 
 ## Rationale for Choosing this Infrastructure
