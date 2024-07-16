@@ -56,7 +56,7 @@ $ ./target/release/sawit-log --log-file sample.log
 ```
 
 > [!IMPORTANT]
-> Modify the `.env` files accordingly based on your existing `Elasticsearch` setup or utilize the provided [docker-compose.yml](docker-compose.yml) file. This step should be completed before running the tool.
+> Modify the `.env` files to match your existing `Elasticsearch` setup or use the default configuration that aligns with the provided  [docker-compose.yml](docker-compose.yml) file. This step should be completed before running the tool.
 
 Cleaning the project:
 
