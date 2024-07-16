@@ -3,16 +3,14 @@
 SRE Technical Test from Sawit Pro, built with Rust as CLI tool. This tool is used to collect log data from source and ship into Elasticsearch Data Lake.
 
 ## TOC
-- [Sawit Test](#sawit-test)
-  - [TOC](#toc)
-  - [Architecture](#architecture)
-  - [Usage](#usage)
-  - [Rationale for Choosing this Infrastructure](#rationale-for-choosing-this-infrastructure)
-  - [Elastic Stack](#elastic-stack)
-    - [Elasticsearch Service](#elasticsearch-service)
-    - [Kibana Service](#kibana-service)
-    - [Deploy ELK Stack](#deploy-elk-stack)
-    - [Deploy Kibana Dashboard](#deploy-kibana-dashboard)
+- [Architecture](#architecture)
+- [Usage](#usage)
+- [Rationale for Choosing thisInfrastructure](#rationale-for-choosing-this-infrastructure)
+- [Elastic Stack](#elastic-stack)
+  - [Elasticsearch Service](#elasticsearch-service)
+  - [Kibana Service](#kibana-service)
+  - [Deploy ELK Stack](#deploy-elk-stack)
+  - [Deploy Kibana Dashboard](#deploy-kibana-dashboard)
 
 ## Architecture
 
