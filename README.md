@@ -53,7 +53,8 @@ networks:
   es-net:
     driver: bridge
 ```
-**Elasticsearch Service:**
+### Elasticsearch Service
+
 - **image:** Specifies the Elasticsearch Docker image and version (elasticsearch:7.17.12 in this case).
 - **container_name:** Sets the name of the Docker container to elasticsearch.
 - **environment:**
@@ -85,7 +86,8 @@ networks:
     depends_on:
       - elasticsearch
 ```
-**Kibana Service:**
+### Kibana Service
+
 - **image:** Specifies the Kibana Docker image and version (kibana:7.17.12 in this case).
 - **container_name:** Sets the name of the Docker container to kibana.
 - **environment:**
@@ -109,14 +111,14 @@ Access Elasticsearch at http://localhost:9200 and Kibana at http://localhost:560
 
 ### Deploy Kibana Dashboard
 
-To deploy Kibana dashboards using saved objects stored in a [assets/dashboard.ndjson](./assets/dashboard.json).
+To deploy Kibana dashboards using saved objects stored in a [assets/dashboard.json](./assets/dashboard.json).
 
-**Using Kibana Saved Objects API:**
-
-Use `curl` or any HTTP client to send a POST request to import the saved objects:
+Use `curl` or any HTTP client to send a POST request to import objects via Kibana Saved Objects API:
 
 ```
 curl -X POST "http://elastic:homestead@localhost:5601/api/saved_objects/_import" \
   -H "kbn-xsrf: true" \
-  --form file=@assets/dashboard.ndjson
+  --form file=@assets/dashboard.json
 ```
+
+![components](./assets/images/kibana.png)
