@@ -50,10 +50,13 @@ Manual building executable from source code:
 ```
 $ git clone https://github.com/gibranbadrulz/sawit-test.git
 $ cd sawit-test
+$ make config
 $ make release DEBUG=true
-$ cp .env_example .env
 $ ./target/release/sawit-log --log-file sample.log
 ```
+
+> [!IMPORTANT]
+> Modify the `.env` files accordingly based on your existing `Elasticsearch` setup or utilize the provided `docker-compose.yml` file. This step should be completed before running the tool.
 
 Cleaning the project:
 
