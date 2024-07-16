@@ -36,6 +36,9 @@ test:
 run:
 	$(CARGO) run $(CARGO_FLAGS)
 
+config:
+	cp .env.example .env
+
 help:
 	@echo "Usage: make [TARGET]"
 	@echo ""
@@ -48,6 +51,7 @@ help:
 	@echo "  test     - Run tests"
 	@echo "  run      - Run the project"
 	@echo "  help     - Display this help message"
+	@echo "  config   - Generate environment config"
 	@echo ""
 	@echo "Options:"
 	@echo "  DEBUG    - Set to 'true' for verbose output, 'false' for quiet (default: true)"
