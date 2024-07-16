@@ -11,12 +11,16 @@ SRE Technical Test from Sawit Pro, built with Rust as CLI tool. This tool is use
 
 - [Architecture](#architecture)
 - [Usage](#usage)
+  - [Docker](#docker)
+  - [— or](#-or)
+- [Tests](#tests)
 - [Rationale for Choosing thisInfrastructure](#rationale-for-choosing-this-infrastructure)
 - [Elastic Stack](#elastic-stack)
   - [Elasticsearch Service](#elasticsearch-service)
   - [Kibana Service](#kibana-service)
   - [Deploy ELK Stack](#deploy-elk-stack)
   - [Deploy Kibana Dashboard](#deploy-kibana-dashboard)
+  - [Dashboard Overview](#dashboard-overview)
 
 ---
 
@@ -56,6 +60,10 @@ Cleaning the project:
 ```
 $ make clean
 ```
+
+## Tests
+
+![run](./assets/images/docker_run.png)
 
 ## Rationale for Choosing this Infrastructure
 
@@ -163,14 +171,18 @@ Access Elasticsearch at http://localhost:9200 and Kibana at http://localhost:560
 
 ### Deploy Kibana Dashboard
 
-To deploy Kibana dashboards using saved objects stored in a [assets/dashboard.json](./assets/dashboard.json).
+To deploy Kibana dashboards using saved objects stored in a [assets/dashboard.ndjson](./assets/dashboard.ndjson).
 
 Use `curl` or any HTTP client to send a POST request to import objects via Kibana Saved Objects API:
 
 ```
 curl -X POST "http://elastic:homestead@localhost:5601/api/saved_objects/_import" \
   -H "kbn-xsrf: true" \
-  --form file=@assets/dashboard.json
+  --form file=@assets/dashboard.ndjson
 ```
 
-![components](./assets/images/kibana.png)
+### Dashboard Overview
+
+![kibana](./assets/images/kibana.png)
+
+The dashboard above displays relevant metrics such as error rates (e.g., count of status codes that are 400 or 500), average response times, total number of transactions, and a lens visualization for detailed log analysis.
