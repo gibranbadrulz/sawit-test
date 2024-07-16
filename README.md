@@ -185,4 +185,4 @@ curl -X POST "http://elastic:homestead@localhost:5601/api/saved_objects/_import"
 
 ![kibana](./assets/images/kibana.png)
 
-The dashboard above displays relevant metrics such as error rates (e.g., count of status codes that are 400 or 500), average response times, total number of transactions, and a lens visualization for detailed log analysis.
+The dashboard above displays relevant metrics such as error rates (e.g., count of status codes that are 400 or 500), average response times, total number of transactions and a lens visualization for detailed log analysis.
