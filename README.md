@@ -14,7 +14,7 @@ SRE Technical Test from Sawit Pro, built with Rust as CLI tool. This tool is use
   - [Docker](#docker)
   - [— or](#-or)
 - [Tests](#tests)
-- [Rationale for Choosing thisInfrastructure](#rationale-for-choosing-this-infrastructure)
+- [Rationale for Choosing this Infrastructure](#rationale-for-choosing-this-infrastructure)
 - [Elastic Stack](#elastic-stack)
   - [Elasticsearch Service](#elasticsearch-service)
   - [Kibana Service](#kibana-service)
